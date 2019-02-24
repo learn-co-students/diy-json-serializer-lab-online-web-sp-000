@@ -1,0 +1,12 @@
+h2 = @product.name
+p
+ | Price: 
+ = @product.price
+ br/
+ | inventory: 
+ = @product.inventory
+ br/
+ = @product.description
+
+p
+  = link_to  "Next Product", "#", onclick: "showNext(); return false;"

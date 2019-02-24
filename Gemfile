@@ -41,8 +41,10 @@ group :development, :test do
   gem 'faker'
   gem 'shoulda'
   gem 'poltergeist', '~> 1.14.0'
-  gem 'slim-rails'
+  gem 'guard'
 end
+
+gem 'slim-rails'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
