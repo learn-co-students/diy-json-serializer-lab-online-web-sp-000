@@ -1,12 +1,12 @@
-h2 = @product.name
-p
+h2.name = @product.name
+p.price
  | Price: 
  = @product.price
- br/
+p.inventory
  | inventory: 
  = @product.inventory
- br/
+p.description
  = @product.description
 
 p
-  = link_to  "Next Product", "#", onclick: "showNext(); return false;"
+  = link_to  "Next Product", "#", onclick: "showNext(#{@product.id}); return false;"
