@@ -7,7 +7,8 @@ class ProductSerializer
       description: product.description
     }
     atts = attributes.map do |(k,v)|
-      %("#{k.to_s}": "#{v}")
+      val = (/\A[-+]?\d+\z/ === v.to_s) ? "#{v}" : %("#{v}")
+      %("#{k.to_s}": #{val})
     end
     "{ #{atts.join(',')} }"
   end
