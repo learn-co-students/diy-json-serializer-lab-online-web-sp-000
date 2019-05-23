@@ -6,8 +6,8 @@
 
 <script type="text/javascript">
   $(function () {
-    $(".js-next").on("click", function(event) {
-      event.preventDefault()
+    $(".js-next").on("click", function(e) {
+      e.preventDefault()
       const nextId = parseInt($(".js-next").attr("data-id")) + 1;
       $.getJSON("/products/" + nextId + "/data", function(data) {
         $(".productName").text(data["name"]);
