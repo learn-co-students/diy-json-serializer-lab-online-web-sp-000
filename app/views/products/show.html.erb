@@ -1,0 +1,17 @@
+<div class="product">
+  <%= @product.name %><br>
+  <%= @product.description %><br>
+</div>
+
+<a href class="js-more" data-id="<%= @product.id %>">Next Product</a>
+
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    $(".js-more").on('click', function() {
+      var id = parseInt($(this).data("id")) + 1;
+      $.getJSON("/products/" + id + "/data", function(data) {
+        $(".product").text(data["name"] + "<br>" + data["description"]);
+      });
+    });
+  });
+</script>
